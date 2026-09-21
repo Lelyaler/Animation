@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NOVA Pay — Премиальный цифровой банкинг</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230f172a' stroke-width='2'><rect width='20' height='14' x='2' y='5' rx='2'/><line x1='2' x2='22' y1='10' y2='10'/></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body class="bg-light antialiased">
+    
+    <div class="light-ambient-bg" aria-hidden="true">
+      <div class="ambient-grid"></div>
+      <div class="ambient-orb orb-1"></div>
+      <div class="ambient-orb orb-2"></div>
+      <div class="ambient-orb orb-3"></div>
+      <div class="ambient-orb orb-4"></div>
+      <div class="ambient-aurora-glow"></div>
+      <div class="ambient-stardust">
+        <span class="star-dot s1"></span>
+        <span class="star-dot s2"></span>
+        <span class="star-dot s3"></span>
+        <span class="star-dot s4"></span>
+        <span class="star-dot s5"></span>
+        <span class="star-dot s6"></span>
+        <span class="star-dot s7"></span>
+        <span class="star-dot s8"></span>
+        <span class="star-dot s9"></span>
+        <span class="star-dot s10"></span>
+      </div>
+      <div class="ambient-cursor-spotlight" id="ambient-cursor-spotlight"></div>
+    </div>
+
+    <div class="app-layout">
+
+      <header class="navbar main-nav">
+        <div class="nav-brand">
+          <div class="brand-symbol">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+          </div>
+          <span class="brand-text">NOVA</span>
+        </div>
+
+        <nav class="nav-menu" id="nav-menu">
+          <a href="#hero">Обзор</a>
+          <a href="#nfc-pay">NFC Оплата</a>
+          <a href="#exchange">Обмен валют</a>
+          <a href="#customizer">Карты</a>
+          <a href="#transactions">Платежи</a>
+        </nav>
+
+        <div class="dynamic-island-wrap" id="dynamic-island-wrap"></div>
+
+        <div class="nav-actions">
+          <a href="#customizer" class="primary-btn nav-btn">Оформить карту</a>
+          <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Открыть меню" type="button">
+            <span class="toggle-bar"></span>
+            <span class="toggle-bar"></span>
+            <span class="toggle-bar"></span>
+          </button>
+        </div>
+      </header>
+
+      <main>
+        
+        <section class="hero-section" id="hero">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            <span>Международный цифровой банкинг нового поколения</span>
+          </div>
+
+          <h1 class="hero-title">
+            Управляйте капиталом<br /><span class="hero-title-accent">в любой точке мира.</span>
+          </h1>
+          <p class="hero-subtitle">
+            Мультивалютные счета, моментальный обмен 140+ валют по биржевому курсу и премиальные физические карты с индивидуальной гравировкой.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#customizer" class="primary-btn hero-cta-btn">Выпустить карту</a>
+            <a href="#exchange" class="secondary-btn hero-cta-btn">Рассчитать курс обмена</a>
+          </div>
+
+          <div class="orbital-stage-wrapper" id="orbital-stage" title="Зажмите мышь и потяните, чтобы раскрутить орбиту">
+            
+            <div class="orbital-ambient-glow"></div>
+            <div class="orbital-stage-shadow"></div>
+
+            <div class="orbit-card card-platinum" data-card="titanium">
+              <div class="card-inner">
+                <div class="card-face card-front">
+                  <div class="card-holo-foil"></div>
+                  <div class="card-hologram-glare"></div>
+                  <div class="card-top">
+                    <span class="card-chip-emv"></span>
+                    <span class="card-logo">NOVA <b>TITANIUM</b></span>
+                  </div>
+                  <div class="card-balance">
+                    <span class="c-lbl">Доступный остаток</span>
+                    <span class="c-val">€32,450.00</span>
+                  </div>
+                  <div class="card-bottom">
+                    <span class="card-number">•••• 8814</span>
+                    <span class="card-nfc">)))</span>
+                  </div>
+                </div>
+                <div class="card-face card-back">
+                  <div class="card-magstripe"></div>
+                  <div class="card-back-meta">
+                    <div class="card-sign-strip">
+                      <span class="sign-name">ALEXANDER NOVA</span>
+                    </div>
+                    <div class="card-cvv-box">
+                      <span class="cvv-lbl">CVV</span>
+                      <span class="cvv-code">842</span>
+                    </div>
+                  </div>
+                  <div class="card-back-legal">
+                    <span>NOVA PAY EUROPE • REG. #49201 • 24/7 SUPPORT: +44 20 7946 0912</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="orbit-card card-hologram" data-card="hologram">
+              <div class="card-inner">
+                <div class="card-face card-front">
+                  <div class="card-holo-foil"></div>
+                  <div class="card-hologram-glare"></div>
+                  <div class="card-top">
+                    <span class="card-chip-emv"></span>
+                    <span class="card-logo">NOVA <b>HOLOGRAM</b></span>
+                  </div>
+                  <div class="card-balance">
+                    <span class="c-lbl">Доступный остаток</span>
+                    <span class="c-val">$48,920.50</span>
+                  </div>
+                  <div class="card-bottom">
+                    <span class="card-number">•••• 4921</span>
+                    <span class="card-nfc">)))</span>
+                  </div>
+                </div>
+                <div class="card-face card-back">
+                  <div class="card-magstripe"></div>
+                  <div class="card-back-meta">
+                    <div class="card-sign-strip">
+                      <span class="sign-name">ALEXANDER NOVA</span>
+                    </div>
+                    <div class="card-cvv-box">
+                      <span class="cvv-lbl">CVV</span>
+                      <span class="cvv-code">591</span>
+                    </div>
+                  </div>
+                  <div class="card-back-legal">
+                    <span>NOVA PAY EUROPE • REG. #49201 • 24/7 SUPPORT: +44 20 7946 0912</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="orbit-card card-emerald" data-card="emerald">
+              <div class="card-inner">
+                <div class="card-face card-front">
+                  <div class="card-holo-foil"></div>
+                  <div class="card-hologram-glare"></div>
+                  <div class="card-top">
+                    <span class="card-chip-emv chip-gold"></span>
+                    <span class="card-logo">NOVA <b>EMERALD</b></span>
+                  </div>
+                  <div class="card-balance">
+                    <span class="c-lbl">Доступный остаток</span>
+                    <span class="c-val">£18,340.20</span>
+                  </div>
+                  <div class="card-bottom">
+                    <span class="card-number">•••• 3210</span>
+                    <span class="card-nfc">)))</span>
+                  </div>
+                </div>
+                <div class="card-face card-back">
+                  <div class="card-magstripe"></div>
+                  <div class="card-back-meta">
+                    <div class="card-sign-strip">
+                      <span class="sign-name">ALEXANDER NOVA</span>
+                    </div>
+                    <div class="card-cvv-box">
+                      <span class="cvv-lbl">CVV</span>
+                      <span class="cvv-code">309</span>
+                    </div>
+                  </div>
+                  <div class="card-back-legal">
+                    <span>NOVA PAY EUROPE • REG. #49201 • 24/7 SUPPORT: +44 20 7946 0912</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="orbit-inspect-bar" id="orbit-inspect-bar">
+            <span class="inspect-hint">💡 Кликните по карте для переворота (3D Flip)</span>
+            <button class="inspect-close-btn" id="inspect-close-btn" type="button">✕ Вернуть в орбиту</button>
+          </div>
+
+          <div class="hero-orbit-guide">
+            <span class="guide-tag">Интерактивная физика</span>
+            <span>Потяните мышью или свайпом, чтобы раскрутить 3D-орбиту • Кликните на любую карту для 3D-осмотра</span>
+          </div>
+
+          <div class="live-ticker-marquee">
+            <div class="ticker-track">
+              <div class="ticker-item"><span class="ticker-pair">EUR / USD</span><span class="ticker-val">1.0864</span><span class="ticker-delta delta-up">▲ +0.32%</span></div>
+              <div class="ticker-item"><span class="ticker-pair">GBP / USD</span><span class="ticker-val">1.2915</span><span class="ticker-delta delta-up">▲ +0.18%</span></div>
+              <div class="ticker-item"><span class="ticker-pair">USD / JPY</span><span class="ticker-val">154.20</span><span class="ticker-delta delta-down">▼ -0.12%</span></div>
+              <div class="ticker-item"><span class="ticker-pair">USD / CHF</span><span class="ticker-val">0.8920</span><span class="ticker-delta delta-up">▲ +0.05%</span></div>
+              <div class="ticker-item"><span class="ticker-pair">EUR / GBP</span><span class="ticker-val">0.8412</span><span class="ticker-delta delta-down">▼ -0.08%</span></div>
+              <div class="ticker-item"><span class="ticker-pair">BTC / USD</span><span class="ticker-val">$68,450</span><span class="ticker-delta delta-up">▲ +2.40%</span></div>
+              <div class="ticker-item"><span class="ticker-pair">EUR / USD</span><span class="ticker-val">1.0864</span><span class="ticker-delta delta-up">▲ +0.32%</span></div>
+              <div class="ticker-item"><span class="ticker-pair">GBP / USD</span><span class="ticker-val">1.2915</span><span class="ticker-delta delta-up">▲ +0.18%</span></div>
+              <div class="ticker-item"><span class="ticker-pair">USD / JPY</span><span class="ticker-val">154.20</span><span class="ticker-delta delta-down">▼ -0.12%</span></div>
+              <div class="ticker-item"><span class="ticker-pair">USD / CHF</span><span class="ticker-val">0.8920</span><span class="ticker-delta delta-up">▲ +0.05%</span></div>
+              <div class="ticker-item"><span class="ticker-pair">EUR / GBP</span><span class="ticker-val">0.8412</span><span class="ticker-delta delta-down">▼ -0.08%</span></div>
+              <div class="ticker-item"><span class="ticker-pair">BTC / USD</span><span class="ticker-val">$68,450</span><span class="ticker-delta delta-up">▲ +2.40%</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="nfc-pay-section" id="nfc-pay">
+          <div class="section-header text-center">
+            <span class="section-tag">БЕСКОНТАКТНАЯ ОПЛАТА</span>
+            <h2 class="section-title">Мгновенный отклик в одно касание.</h2>
+            <p class="section-desc">Приложите карту к терминалу или нажмите кнопку, чтобы ощутить 3D-физику тапа, неоновые NFC-волны и тактильный звук подтверждения транзакции.</p>
+          </div>
+
+          <div id="nfc-station-container"></div>
+        </section>
+
+        <section class="exchange-section" id="exchange">
+          <div class="section-header text-center">
+            <span class="section-tag">МГНОВЕННЫЙ ОБМЕН</span>
+            <h2 class="section-title">Биржевой курс без скрытых комиссий.</h2>
+            <p class="section-desc">Конвертируйте средства по реальному межбанковскому курсу с автоматическим обновлением котировок.</p>
+          </div>
+
+          <div class="exchange-card-box light-card" id="exchange-calc-container">
+            <div class="calc-inputs-row">
+              <div class="calc-col">
+                <label for="exchange-from-input">Вы отдаете</label>
+                <div class="calc-input-wrapper">
+                  <input type="number" id="exchange-from-input" value="1000" min="1" />
+                  <select id="from-currency-select" class="currency-select" aria-label="Валюта списания">
+                    <option value="USD">USD ($)</option>
+                    <option value="EUR">EUR (€)</option>
+                    <option value="GBP">GBP (£)</option>
+                    <option value="JPY">JPY (¥)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="calc-swap-wrapper">
+                <button class="calc-swap-btn" id="calc-swap-btn" type="button" title="Поменять валюты местами">
+                  <span>⇄</span>
+                </button>
+              </div>
+
+              <div class="calc-col">
+                <label for="exchange-to-input">Вы получаете</label>
+                <div class="calc-input-wrapper">
+                  <input type="text" id="exchange-to-input" readonly value="€ 920.00" />
+                  <select id="to-currency-select" class="currency-select" aria-label="Валюта получения">
+                    <option value="EUR" selected>EUR (€)</option>
+                    <option value="USD">USD ($)</option>
+                    <option value="GBP">GBP (£)</option>
+                    <option value="JPY">JPY (¥)</option>
+                  </select>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="rate-status-row">
+              <div class="rate-indicator">
+                <span class="status-dot"></span>
+                <span class="rate-lbl">Текущий курс:</span>
+                <strong id="exchange-rate-text">1 USD = 0.9200 EUR</strong>
+              </div>
+              <div class="fee-badge">Комиссия 0%</div>
+            </div>
+
+            <div class="exchange-chart-section">
+              <div class="chart-header">
+                <span class="ch-lbl">Динамика рыночной стоимости</span>
+                <div class="chart-period-tabs">
+                  <button class="chart-period-btn active">24 ч</button>
+                  <button class="chart-period-btn">7 дн</button>
+                  <button class="chart-period-btn">1 мес</button>
+                </div>
+              </div>
+              <div id="exchange-chart-svg-wrap" class="exchange-chart-svg-wrap"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="customizer-section" id="customizer">
+          <div class="section-header text-center">
+            <span class="section-tag">ВАША КАРТА</span>
+            <h2 class="section-title">Индивидуальный стиль и контроль.</h2>
+            <p class="section-desc">Выберите благородный материал корпуса, нанесите имя и управляйте защитой карты в реальном времени.</p>
+          </div>
+
+          <div class="customizer-grid" id="card-customizer-container">
+            <div class="customizer-preview-col">
+              <div class="custom-card-body card-mat-obsidian" id="custom-card-preview">
+                <div class="custom-card-glare"></div>
+                <div class="laser-scanner" id="laser-scanner"></div>
+
+                <div class="card-frost-overlay" id="card-frost-overlay">
+                  <div class="frost-badge">🔒 КАРТА ЗАМОРОЖЕНА</div>
+                </div>
+
+                <div class="custom-card-top">
+                  <span class="emv-chip"></span>
+                  <span class="card-brand-logo">NOVA</span>
+                </div>
+                <div class="custom-card-number">•••• •••• •••• 5590</div>
+                <div class="custom-card-bottom">
+                  <div class="c-meta">
+                    <span class="meta-lbl">ВЛАДЕЛЕЦ КАРТЫ</span>
+                    <span class="meta-val" id="card-name-display">ALEXANDER NOVA</span>
+                  </div>
+                  <div class="c-meta">
+                    <span class="meta-lbl">СРОК</span>
+                    <span class="meta-val">09/31</span>
+                  </div>
+                  <span class="nfc-icon">)))</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="customizer-options-col light-card">
+              <div class="panel-head">
+                <h3>Параметры выпуска</h3>
+                <span class="panel-sub">Бесплатная курьерская доставка</span>
+              </div>
+
+              <div class="opt-group">
+                <label>Материал карты:</label>
+                <div class="material-pills-row">
+                  <button class="mat-btn active" data-mat="obsidian" type="button">
+                    <span class="color-dot dot-obsidian"></span>
+                    <span>Midnight Obsidian</span>
+                  </button>
+                  <button class="mat-btn" data-mat="platinum" type="button">
+                    <span class="color-dot dot-platinum"></span>
+                    <span>Brushed Titanium</span>
+                  </button>
+                  <button class="mat-btn" data-mat="emerald" type="button">
+                    <span class="color-dot dot-emerald"></span>
+                    <span>Racing Emerald</span>
+                  </button>
+                  <button class="mat-btn" data-mat="sapphire" type="button">
+                    <span class="color-dot dot-sapphire"></span>
+                    <span>Royal Sapphire</span>
+                  </button>
+                  <button class="mat-btn" data-mat="hologram" type="button">
+                    <span class="color-dot dot-hologram"></span>
+                    <span>Prism Hologram</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="opt-group">
+                <label for="cardholder-name-input">Имя на лицевой стороне (латиница):</label>
+                <input type="text" id="cardholder-name-input" value="ALEXANDER NOVA" maxlength="20" placeholder="IVAN IVANOV" autocomplete="off" />
+              </div>
+
+              <div class="opt-actions">
+                <button id="freeze-card-btn" class="secondary-btn toggle-freeze-btn" type="button">
+                  <span class="btn-icon">❄</span>
+                  <span class="btn-text">Заморозить карту</span>
+                </button>
+                <button id="order-card-btn" class="primary-btn" type="button">
+                  <span>Выпустить карту</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <section class="dashboard-preview-section" id="transactions">
+          <div class="section-header text-center">
+            <span class="section-tag">ПЛАТЕЖИ</span>
+            <h2 class="section-title">Прозрачность каждой операции.</h2>
+            <p class="section-desc">Уведомления за доли секунды и детальная аналитика расходов по категориям.</p>
+          </div>
+
+          <div class="transactions-bento-split">
+            <div class="transactions-column light-card">
+              <div class="tx-header">
+                <div>
+                  <h3>Последние транзакции</h3>
+                  <span class="tx-subtitle">Синхронизация в реальном времени</span>
+                </div>
+                <div class="tx-filter-pills" id="tx-filter-pills">
+                  <button class="tx-pill-btn active" data-filter="all">Все</button>
+                  <button class="tx-pill-btn" data-filter="income">Доходы</button>
+                  <button class="tx-pill-btn" data-filter="expense">Расходы</button>
+                </div>
+              </div>
+              <div class="tx-feed-container" id="tx-feed-container"></div>
+            </div>
+
+            <div class="metrics-column">
+              
+              <div class="stat-card light-card">
+                <div class="stat-top">
+                  <span class="stat-num">3.5%</span>
+                  <span class="stat-pill">Кешбэк</span>
+                </div>
+                <h4>Реальными деньгами на счет</h4>
+                <p>Возврат начисляется в валюте платежа без ограничений и сложных балльных систем.</p>
+              </div>
+
+              <div class="stat-card light-card">
+                <div class="stat-top">
+                  <span class="stat-num">0 ₽</span>
+                  <span class="stat-pill">Тариф</span>
+                </div>
+                <h4>Бесплатное обслуживание</h4>
+                <p>Никаких скрытых списаний, бесплатных периодов или условий по минимальному остатку.</p>
+              </div>
+
+              <div class="stat-card light-card">
+                <div class="stat-top">
+                  <span class="stat-num">&lt; 1.2 с</span>
+                  <span class="stat-pill">Скорость</span>
+                </div>
+                <h4>Мгновенные переводы</h4>
+                <p>Прямое подключение к шлюзам SEPA Instant и SWIFT с мгновенным подтверждением.</p>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+      </main>
+
+      <footer class="app-footer">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <span class="brand-text">NOVA</span>
+            <p>Премиальные финансовые сервисы и мультивалютные счета для частных лиц и бизнеса.</p>
+          </div>
+          <div class="footer-links">
+            <a href="#">Условия обслуживания</a>
+            <a href="#">Конфиденциальность</a>
+            <a href="#">Безопасность</a>
+            <a href="#">Тарифы</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 NOVA Technologies Inc. Лицензия европейского финансового регулятора.</p>
+        </div>
+      </footer>
+
+    </div>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
