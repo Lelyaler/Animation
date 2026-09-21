@@ -1,6 +1,8 @@
 # NOVA Pay
 
-Interactive 3D fintech landing page concept featuring:
+Interactive 3D fintech landing page concept.
+
+🔗 **Live Demo:** https://lelyaler.github.io/Animation/
 
 - **3D Card Carousel**: Real-time orbital physics with inertia, tilt-on-hover, and 3D card inspection.
 - **NFC Tap-to-Pay**: Contactless payment simulation with procedural Web Audio feedback, EMV chip authorization, and receipt ejection.
