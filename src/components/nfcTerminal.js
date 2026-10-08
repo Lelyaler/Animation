@@ -166,9 +166,9 @@ export class NFCTerminal {
 
         <div class="nfc-controls-wrap">
           <div class="nfc-panel-header">
-            <span class="nfc-badge">NFC 3D Touch Physics</span>
-            <h3>Симуляция бесконтактной оплаты</h3>
-            <p>Выберите магазин и карту, затем нажмите кнопку или кликните по карте для моментальной транзакции с тактильным звуком.</p>
+            <span class="nfc-badge">Бесконтактный платеж</span>
+            <h3>Симуляция оплаты картой</h3>
+            <p>Выберите сумму покупки и карту, затем приложите карту к терминалу или нажмите кнопку для подтверждения транзакции.</p>
           </div>
 
           <div class="nfc-select-group">
