@@ -625,7 +625,7 @@ export class NFCTerminal {
     waves.forEach((ring, i) => {
       gsap.killTweensOf(ring);
       gsap.fromTo(ring,
-        { scale: 0.5, opacity: 0.95, borderColor: i === 1 ? '#38bdf8' : '#10b981', borderWidth: '2.5px' },
+        { scale: 0.5, opacity: 0.95, borderColor: i === 1 ? '#34d399' : '#10b981', borderWidth: '2.5px' },
         { scale: 3.4 + i * 0.4, opacity: 0, borderWidth: '1px', duration: 0.95, delay: i * 0.1, ease: 'power2.out' }
       );
     });
