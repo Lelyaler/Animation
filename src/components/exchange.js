@@ -156,13 +156,13 @@ export class ExchangeCalculator {
       <svg class="exchange-svg" viewBox="0 0 ${width} ${height}">
         <defs>
           <linearGradient id="exGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#2563eb" stop-opacity="0.14" />
-            <stop offset="100%" stop-color="#2563eb" stop-opacity="0.0" />
+            <stop offset="0%" stop-color="#10b981" stop-opacity="0.18" />
+            <stop offset="100%" stop-color="#10b981" stop-opacity="0.0" />
           </linearGradient>
         </defs>
         <path class="ex-area" d="${areaD}" fill="url(#exGradient)" />
-        <path class="ex-curve" d="${pathD}" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" />
-        <circle cx="${pts[pts.length - 1].x}" cy="${pts[pts.length - 1].y}" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2">
+        <path class="ex-curve" d="${pathD}" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" />
+        <circle cx="${pts[pts.length - 1].x}" cy="${pts[pts.length - 1].y}" r="4" fill="#10b981" stroke="#ffffff" stroke-width="2">
           <animate attributeName="r" values="4;5.5;4" dur="2s" repeatCount="indefinite" />
         </circle>
       </svg>
