@@ -1,12 +1,23 @@
-# NOVA Pay
+# NOVA Pay — Интерактивный концепт финтех-интерфейса
 
-Interactive 3D fintech landing page concept.
+> **Live Demo:** [https://lelyaler.github.io/Animation/](https://lelyaler.github.io/Animation/)
 
-🔗 **Live Demo:** https://lelyaler.github.io/Animation/
+Комплексный фронтенд-проект с интерактивными микроанимациями, 3D-трансформациями и компонентами современного цифрового банкинга.
 
-- **3D Card Carousel**: Real-time orbital physics with inertia, tilt-on-hover, and 3D card inspection.
-- **NFC Tap-to-Pay**: Contactless payment simulation with procedural Web Audio feedback, EMV chip authorization, and receipt ejection.
-- **Card Customizer**: Interactive material switcher, laser scanner animation, and instant card freeze.
-- **Financial Tools**: Live currency exchange calculator with SVG trend charts and real-time transaction feed.
+## Ключевые интерактивные модули
 
-**Stack:** JavaScript (ES6+), GSAP, Modern CSS (3D Transforms), Vite.
+- **3D-карусель карт с орбитальной физикой**: инерционное перетаскивание, эффект глубины и наклон карты в пространстве с бликами при наведении курсора.
+- **Интерактивный NFC-терминал**: симуляция бесконтактной оплаты картой, анимация считывания чипа EMV, звуковое подтверждение операции и выезд фискального чека.
+- **Конструктор оформления карт**: динамическое переключение материалов (титан, обсидиан, золото, киберпанк-голография), лазерный сканер гравировки и заморозка с эффектом инея.
+- **Финансовые виджеты**: валютный калькулятор с интерактивным SVG-графиком динамики курсов и поток транзакций в реальном времени с фильтрацией.
+- **Интерактивный Dynamic Island**: всплывающие системные уведомления в шапке с плавной интерполяцией состояний.
+- **Курсорное освещение**: фоновый эффект направленного светового пятна, следующего за указателем мыши.
+
+## Стек технологий
+
+- Vanilla JavaScript (ES6+ / Модульная архитектура)
+- GSAP (GreenSock Animation Platform)
+- Canvas Confetti
+- Lucide Icons
+- Modern CSS (3D Transforms, Backdrop Blur, CSS Grid / Flexbox)
+- Vite
