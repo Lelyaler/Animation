@@ -10,12 +10,12 @@ import { setupMagneticButtons } from './animations/magneticButton.js';
 document.addEventListener('DOMContentLoaded', () => {
   const islandWrap = document.getElementById('dynamic-island-wrap');
   if (islandWrap) {
-    window.novaDynamicIsland = new DynamicIsland(islandWrap);
+    new DynamicIsland(islandWrap);
   }
 
   const txContainer = document.getElementById('tx-feed-container');
   if (txContainer) {
-    window.novaTransactionFeed = new TransactionFeed(txContainer);
+    new TransactionFeed(txContainer);
   }
 
   const orbitalStage = document.getElementById('orbital-stage');

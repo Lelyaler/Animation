@@ -42,6 +42,12 @@ export class DynamicIsland {
       this.toggleExpand();
     });
 
+    document.addEventListener('nova:notification', (e) => {
+      if (e.detail) {
+        this.showNotification(e.detail);
+      }
+    });
+
     this.startNotificationCycle();
   }
 

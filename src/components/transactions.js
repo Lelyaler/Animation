@@ -22,6 +22,12 @@ export class TransactionFeed {
     this.initFilterTabs();
     this.renderInitial();
     this.startLiveStream();
+
+    document.addEventListener('nova:transaction', (e) => {
+      if (e.detail) {
+        this.addTransaction(e.detail);
+      }
+    });
   }
 
   initFilterTabs() {
