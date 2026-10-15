@@ -95,22 +95,24 @@ export class CardCustomizer {
       });
     }
 
+    const MATERIAL_NAMES = {
+      obsidian: 'Midnight Obsidian',
+      platinum: 'Brushed Titanium',
+      emerald: 'Racing Emerald',
+      sapphire: 'Royal Sapphire',
+      hologram: 'Prism Hologram'
+    };
+
     if (this.orderBtn) {
       this.orderBtn.addEventListener('click', () => {
-        confetti({
-          particleCount: 80,
-          spread: 70,
-          origin: { y: 0.7 }
-        });
-
-        const btn = this.orderBtn;
-        btn.innerHTML = `<span>✓ Карта успешно выпущена!</span>`;
-        btn.classList.add('btn-success');
-
-        setTimeout(() => {
-          btn.innerHTML = `<span>Выпустить карту</span>`;
-          btn.classList.remove('btn-success');
-        }, 3000);
+        const holderName = this.nameInput && this.nameInput.value.trim() ? this.nameInput.value.trim() : 'ALEXANDER VORONOV';
+        document.dispatchEvent(new CustomEvent('nova:open-order-modal', {
+          detail: {
+            cardholder: holderName,
+            materialKey: this.currentMaterial,
+            materialName: MATERIAL_NAMES[this.currentMaterial] || 'Midnight Obsidian'
+          }
+        }));
       });
     }
   }

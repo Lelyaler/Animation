@@ -562,3 +562,21 @@
   background: rgba(239, 68, 68, 0.15);
 }
 
+.ticker-flash-up {
+  animation: flashGreen 0.8s ease-out;
+}
+
+.ticker-flash-down {
+  animation: flashRed 0.8s ease-out;
+}
+
+@keyframes flashGreen {
+  0% { color: #34d399; text-shadow: 0 0 8px rgba(52, 211, 153, 0.7); }
+  100% { color: inherit; text-shadow: none; }
+}
+
+@keyframes flashRed {
+  0% { color: #f87171; text-shadow: 0 0 8px rgba(248, 113, 113, 0.7); }
+  100% { color: inherit; text-shadow: none; }
+}
+
