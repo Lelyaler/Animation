@@ -9,45 +9,45 @@ if (successAudio) successAudio.preload = 'auto';
 export const STORES = [
   {
     id: 'coffee',
-    name: 'Blue Bottle Coffee',
-    category: 'Кафе и рестораны',
+    name: 'Starbucks Reserve',
+    category: 'Кафе и встречи',
     icon: '☕',
-    amount: 6.50,
+    amount: 8.50,
     currency: '$',
-    cashback: 0.23,
+    cashback: 0.30,
     authCode: 'NV-884102',
     terminalId: 'POS-BER-401'
   },
   {
-    id: 'apple',
-    name: 'Apple Flagship Store',
-    category: 'Электроника',
-    icon: '📱',
-    amount: 1199.00,
+    id: 'software',
+    name: 'JetBrains Tools',
+    category: 'Лицензии и ПО',
+    icon: '💻',
+    amount: 289.00,
     currency: '$',
-    cashback: 41.96,
+    cashback: 10.12,
     authCode: 'NV-941829',
-    terminalId: 'POS-NYC-882'
+    terminalId: 'POS-AMS-882'
   },
   {
     id: 'airline',
-    name: 'Emirates First Class',
-    category: 'Путешествия',
+    name: 'Lufthansa Flights',
+    category: 'Авиаперелеты',
     icon: '✈️',
-    amount: 3450.00,
+    amount: 1420.00,
     currency: '$',
-    cashback: 120.75,
+    cashback: 49.70,
     authCode: 'NV-772901',
-    terminalId: 'POS-DXB-104'
+    terminalId: 'POS-FRA-104'
   },
   {
-    id: 'restaurant',
-    name: 'Nobu Michelin Dining',
-    category: 'Рестораны',
-    icon: '🍣',
-    amount: 320.00,
+    id: 'hotel',
+    name: 'Hyatt Hotels',
+    category: 'Отели и проживание',
+    icon: '🏨',
+    amount: 680.00,
     currency: '$',
-    cashback: 11.20,
+    cashback: 23.80,
     authCode: 'NV-394018',
     terminalId: 'POS-LDN-305'
   }

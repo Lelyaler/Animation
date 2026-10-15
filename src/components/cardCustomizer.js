@@ -63,7 +63,7 @@ export class CardCustomizer {
       this.nameInput.addEventListener('input', (e) => {
         const val = e.target.value.toUpperCase().slice(0, 20);
         e.target.value = val;
-        this.cardholderLabel.textContent = val.trim().length > 0 ? val : 'YOUR NAME';
+        this.cardholderLabel.textContent = val.trim().length > 0 ? val : 'ALEXANDER VORONOV';
       });
     }
 

@@ -1,0 +1,440 @@
+/* Responsive */
+@media (max-width: 1200px) {
+  .app-layout {
+    padding: 12px 24px 60px;
+    max-width: 100%;
+  }
+
+  .nfc-station-grid {
+    grid-template-columns: 380px 1fr;
+    gap: 36px;
+    padding: 36px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .app-layout {
+    gap: 60px;
+  }
+
+  .customizer-grid,
+  .transactions-bento-split,
+  .nfc-station-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .nfc-station-grid {
+    padding: 36px 28px;
+  }
+
+  .nfc-terminal-wrap {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .customizer-options-col {
+    padding: 32px 24px;
+  }
+
+  .exchange-card-box {
+    padding: 32px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-layout {
+    padding: 8px 16px 48px;
+    gap: 48px;
+  }
+
+  .main-nav {
+    position: sticky;
+    top: 8px;
+    padding: 8px 14px;
+    border-radius: 20px;
+  }
+
+  .mobile-nav-toggle {
+    display: flex;
+  }
+
+  .dynamic-island-wrap {
+    display: none;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 8px;
+    right: 8px;
+    background: rgba(18, 18, 22, 0.96);
+    backdrop-filter: blur(28px) saturate(180%);
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
+    border-radius: 20px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px) scale(0.98);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+    z-index: 500;
+  }
+
+  .nav-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+  }
+
+  .nav-menu a {
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #e2e8f0;
+    background: rgba(255, 255, 255, 0.03);
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .nav-menu a:hover {
+    background: rgba(16, 185, 129, 0.14);
+    color: #34d399;
+  }
+
+  .hero-section {
+    padding: 4px 0 0;
+  }
+
+  .hero-badge {
+    font-size: 11px;
+    padding: 5px 12px;
+    margin-bottom: 14px;
+  }
+
+  .hero-title {
+    font-size: clamp(30px, 7.5vw, 44px);
+    letter-spacing: -1px;
+    margin-bottom: 14px;
+  }
+
+  .hero-subtitle {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 18px;
+    padding: 0 4px;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .hero-cta-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .orbital-stage-wrapper {
+    height: 330px;
+    margin-top: -6px;
+  }
+
+  .orbital-ambient-glow {
+    max-width: 440px;
+    height: 260px;
+  }
+
+  .orbital-stage-shadow {
+    max-width: 360px;
+    height: 50px;
+  }
+
+  .orbit-card {
+    width: 255px;
+    height: 160px;
+    border-radius: 16px;
+  }
+
+  .orbit-card .card-face {
+    padding: 18px;
+  }
+
+  .orbit-card .c-val {
+    font-size: 21px;
+  }
+
+  .orbit-card .card-number {
+    font-size: 11px;
+  }
+
+  .orbit-card .card-top .card-logo {
+    font-size: 10px;
+  }
+
+  .nfc-station-grid {
+    padding: 24px 16px;
+    border-radius: 24px;
+    gap: 28px;
+  }
+
+  .nfc-panel-header h3 {
+    font-size: 20px;
+  }
+
+  .nfc-panel-header p {
+    font-size: 13.5px;
+  }
+
+  .pos-device {
+    max-width: 320px;
+    border-radius: 24px;
+  }
+
+  .pos-screen {
+    padding: 16px 14px;
+  }
+
+  .pos-amount {
+    font-size: 28px;
+  }
+
+  .pos-printer-slot {
+    width: 260px;
+    height: 320px;
+    margin-top: -120px;
+  }
+
+  .pos-receipt-paper {
+    width: 240px;
+    padding: 14px 12px 16px;
+    font-size: 9.5px;
+  }
+
+  .nfc-floating-card {
+    max-width: 290px;
+    width: 100%;
+    height: 178px;
+  }
+
+  .nfc-floating-card .card-face {
+    padding: 16px;
+  }
+
+  .nfc-actions-row {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .nfc-tap-action-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .exchange-card-box {
+    padding: 22px 16px;
+    border-radius: 20px;
+  }
+
+  .calc-inputs-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .calc-swap-wrapper {
+    padding-top: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .calc-swap-btn {
+    margin: 0 auto;
+    width: 40px;
+    height: 40px;
+  }
+
+  .chart-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .chart-periods {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .chart-period-btn {
+    padding: 5px 10px;
+    font-size: 11.5px;
+  }
+
+  .customizer-options-col {
+    padding: 22px 16px;
+    border-radius: 20px;
+  }
+
+  .customizer-preview-col {
+    padding: 10px 0;
+  }
+
+  .custom-card-body {
+    max-width: 320px;
+    width: 100%;
+    height: 198px;
+    padding: 18px 20px;
+    border-radius: 18px;
+  }
+
+  .custom-card-number {
+    font-size: 17px !important;
+    letter-spacing: 3px !important;
+  }
+
+  .emv-chip {
+    width: 36px !important;
+    height: 27px !important;
+  }
+
+  .material-pills-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .color-swatches-row {
+    gap: 8px;
+  }
+
+  .swatch-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .customizer-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-order-card {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .transactions-column {
+    padding: 20px 16px;
+    border-radius: 20px;
+  }
+
+  .tx-row {
+    padding: 10px 0;
+    gap: 10px;
+  }
+
+  .tx-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 15px;
+  }
+
+  .tx-name {
+    font-size: 13px;
+  }
+
+  .tx-cat {
+    font-size: 10.5px;
+  }
+
+  .tx-amount {
+    font-size: 13.5px;
+  }
+
+  .stat-card {
+    padding: 18px 16px;
+    border-radius: 18px;
+  }
+
+  .stat-num {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-layout {
+    padding: 6px 12px 36px;
+    gap: 40px;
+  }
+
+  .main-nav .nav-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .orbit-card {
+    width: 220px;
+    height: 138px;
+  }
+
+  .orbit-card .c-val {
+    font-size: 17px;
+  }
+
+  .orbit-card .c-lbl {
+    font-size: 9px;
+  }
+
+  .custom-card-body {
+    max-width: 285px;
+    height: 176px;
+    padding: 14px 16px;
+  }
+
+  .custom-card-number {
+    font-size: 14.5px !important;
+    letter-spacing: 2px !important;
+  }
+
+  .material-pills-row {
+    grid-template-columns: 1fr;
+  }
+
+  .pos-device {
+    max-width: 280px;
+    border-radius: 20px;
+  }
+
+  .pos-screen {
+    padding: 12px 10px;
+  }
+
+  .pos-amount {
+    font-size: 24px;
+  }
+
+  .pos-nfc-target {
+    height: 94px;
+  }
+
+  .pos-receipt-paper {
+    width: 220px;
+    padding: 12px 10px 14px;
+    font-size: 8.5px;
+  }
+
+  .pos-pills-row button {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+}
+
+
