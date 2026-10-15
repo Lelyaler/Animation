@@ -3,8 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NOVA Pay — Премиальный цифровой банкинг</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230f172a' stroke-width='2'><rect width='20' height='14' x='2' y='5' rx='2'/><line x1='2' x2='22' y1='10' y2='10'/></svg>" />
+    <title>NOVA — Международные мультивалютные счета и корпоративные карты</title>
+    <meta name="description" content="Единая платформа для мультивалютных расчетов, корпоративных карт и моментального межбанковского обмена валют по биржевому курсу." />
+    <meta name="theme-color" content="#090d16" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="NOVA — Международный мультивалютный банкинг" />
+    <meta property="og:description" content="Мультивалютные счета, прямое подключение к SEPA Instant и премиальные корпоративные карты." />
+    <meta property="og:image" content="./favicon.svg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="NOVA — Мультивалютный банкинг" />
+    <meta name="twitter:description" content="Мультивалютные счета, прямое подключение к SEPA Instant и премиальные корпоративные карты." />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -459,6 +468,72 @@
         </div>
       </footer>
 
+    </div>
+
+    <!-- Card Application Modal -->
+    <div class="modal-backdrop" id="order-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-order-title">
+      <div class="modal-card">
+        <button class="modal-close-btn" id="modal-close-btn" aria-label="Закрыть окно" type="button">✕</button>
+        
+        <div class="modal-body" id="modal-form-body">
+          <div class="modal-badge">
+            <span class="badge-dot"></span>
+            <span>Мгновенный выпуск • Бесплатная экспресс-доставка</span>
+          </div>
+          <h3 id="modal-order-title" class="modal-title">Оформление корпоративной карты</h3>
+          <p class="modal-desc">Подтвердите параметры выпуска премиальной корпоративной карты. Виртуальная карта станет доступна в приложении сразу после подтверждения.</p>
+
+          <form id="order-card-form" class="order-form">
+            <div class="form-group">
+              <label for="modal-input-name">Держатель карты (латиница)</label>
+              <input type="text" id="modal-input-name" required placeholder="ALEXANDER VORONOV" />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="modal-input-email">Корпоративный Email</label>
+                <input type="email" id="modal-input-email" required placeholder="alex@company.com" />
+              </div>
+              <div class="form-group">
+                <label for="modal-input-phone">Телефон для 3D-Secure</label>
+                <input type="tel" id="modal-input-phone" required placeholder="+44 20 7946 0912" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="modal-input-address">Адрес доставки (DHL Express)</label>
+              <input type="text" id="modal-input-address" required placeholder="Центральный бульвар, 14, офис 502" />
+            </div>
+
+            <div class="form-card-summary">
+              <div class="summary-chip-row">
+                <span class="summary-lbl">Выбранный материал:</span>
+                <strong id="modal-selected-material">Midnight Obsidian</strong>
+              </div>
+              <div class="summary-chip-row">
+                <span class="summary-lbl">Обслуживание счета:</span>
+                <span class="summary-val">0 € / год</span>
+              </div>
+            </div>
+
+            <button type="submit" class="primary-btn modal-submit-btn" id="modal-submit-btn">
+              <span>Подтвердить выпуск карты</span>
+            </button>
+          </form>
+        </div>
+
+        <div class="modal-success" id="modal-success-body" style="display: none;">
+          <div class="success-icon-box">✓</div>
+          <h3>Заявка одобрена</h3>
+          <p>Виртуальная карта активирована и готова к бесконтактным платежам. Физическая карта передана в отдел лазерной гравировки и будет доставлена курьером DHL Express.</p>
+          <div class="success-track-info">
+            <span>Трек-номер отправления:</span>
+            <strong>DHL-EU-88420-EXP</strong>
+          </div>
+          <button type="button" class="primary-btn modal-done-btn" id="modal-done-btn">Готово</button>
+        </div>
+
+      </div>
     </div>
 
     <script type="module" src="./src/main.js"></script>
