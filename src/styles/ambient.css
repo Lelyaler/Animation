@@ -1,0 +1,129 @@
+/* Ambient Background */
+.light-ambient-bg {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg, #09090b 0%, #0f0f13 50%, #060608 100%);
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+
+
+.ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.ambient-orb.orb-1 {
+  width: 620px;
+  height: 520px;
+  left: 20%;
+  top: 40px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.24) 0%, rgba(5, 150, 105, 0.12) 35%, rgba(4, 120, 87, 0.03) 65%, transparent 75%);
+  filter: blur(55px);
+  animation: orbDrift1 16s ease-in-out infinite alternate;
+}
+
+.ambient-orb.orb-2 {
+  width: 560px;
+  height: 560px;
+  right: 6%;
+  top: 30%;
+  background: radial-gradient(circle, rgba(52, 211, 153, 0.20) 0%, rgba(16, 185, 129, 0.08) 40%, transparent 75%);
+  filter: blur(55px);
+  animation: orbDrift2 18s ease-in-out infinite alternate;
+}
+
+.ambient-orb.orb-3 {
+  width: 580px;
+  height: 580px;
+  left: 6%;
+  top: 55%;
+  background: radial-gradient(circle, rgba(161, 161, 170, 0.14) 0%, rgba(113, 113, 122, 0.05) 40%, transparent 75%);
+  filter: blur(60px);
+  animation: orbDrift3 20s ease-in-out infinite alternate;
+}
+
+.ambient-orb.orb-4 {
+  width: 650px;
+  height: 520px;
+  left: 24%;
+  bottom: -60px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.18) 0%, rgba(6, 95, 70, 0.06) 45%, transparent 70%);
+  filter: blur(60px);
+  animation: orbDrift4 15s ease-in-out infinite alternate;
+}
+
+.ambient-aurora-glow {
+  position: absolute;
+  top: 6%;
+  left: 10%;
+  right: 10%;
+  height: 360px;
+  background: radial-gradient(ellipse 65% 45% at 50% 50%, rgba(16, 185, 129, 0.16) 0%, rgba(52, 211, 153, 0.08) 50%, transparent 80%);
+  filter: blur(65px);
+  animation: auroraBreathe 12s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes auroraBreathe {
+  0% { transform: scale(0.94) translateY(0); opacity: 0.65; }
+  50% { transform: scale(1.12) translateY(30px); opacity: 1; }
+  100% { transform: scale(0.92) translateY(-20px); opacity: 0.65; }
+}
+
+@keyframes orbDrift1 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(90px, 50px, 0) scale(1.18); }
+  100% { transform: translate3d(-70px, 30px, 0) scale(0.92); }
+}
+
+@keyframes orbDrift2 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-80px, -60px, 0) scale(1.2); }
+  100% { transform: translate3d(40px, 50px, 0) scale(0.94); }
+}
+
+@keyframes orbDrift3 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(85px, 60px, 0) scale(1.16); }
+  100% { transform: translate3d(-40px, -45px, 0) scale(0.93); }
+}
+
+@keyframes orbDrift4 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-60px, -40px, 0) scale(1.15); }
+  100% { transform: translate3d(70px, -20px, 0) scale(0.95); }
+}
+
+
+
+.ambient-cursor-spotlight {
+  position: absolute;
+  width: 580px;
+  height: 580px;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, rgba(255, 255, 255, 0.02) 40%, transparent 70%);
+  filter: blur(50px);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  will-change: transform;
+}
+
+.ambient-cursor-spotlight.is-active {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-orb,
+  .ambient-aurora-glow {
+    animation: none !important;
+  }
+}
+

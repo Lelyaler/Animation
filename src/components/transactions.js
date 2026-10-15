@@ -1,13 +1,13 @@
 import gsap from 'gsap';
 
 export const SAMPLE_TX = [
-  { merchant: 'Apple Store', cat: 'Электроника', amount: '-$1,199.00', isIncome: false, icon: 'smartphone', status: 'Оплачено' },
-  { merchant: 'Stripe Payout', cat: 'Доход от клиента', amount: '+$3,450.00', isIncome: true, icon: 'arrow-down-left', status: 'Получено' },
-  { merchant: 'Figma Team', cat: 'Подписка SaaS', amount: '-$45.00', isIncome: false, icon: 'layers', status: 'Оплачено' },
-  { merchant: 'Uber Premier', cat: 'Транспорт', amount: '-$28.50', isIncome: false, icon: 'car', status: 'Оплачено' },
-  { merchant: 'Airbnb Tokyo', cat: 'Путешествие', amount: '-$420.00', isIncome: false, icon: 'home', status: 'Оплачено' },
-  { merchant: 'Spotify Family', cat: 'Музыка', amount: '-$16.99', isIncome: false, icon: 'music', status: 'Оплачено' },
-  { merchant: 'Upwork Global', cat: 'Гонорар фриланс', amount: '+$1,820.00', isIncome: true, icon: 'arrow-down-left', status: 'Получено' }
+  { merchant: 'AWS EMEA Cloud', cat: 'Инфраструктура', amount: '-$384.20', isIncome: false, icon: 'smartphone', status: 'Исполнено' },
+  { merchant: 'Klarna AB (SEPA)', cat: 'Выплата контрагента', amount: '+$4,250.00', isIncome: true, icon: 'arrow-down-left', status: 'Зачислено' },
+  { merchant: 'Figma Enterprise', cat: 'Подписка SaaS', amount: '-$90.00', isIncome: false, icon: 'layers', status: 'Исполнено' },
+  { merchant: 'Uber Business', cat: 'Корпоративный трансфер', amount: '-$34.80', isIncome: false, icon: 'car', status: 'Исполнено' },
+  { merchant: 'Hilton Munich City', cat: 'Командировки', amount: '-$512.00', isIncome: false, icon: 'home', status: 'Исполнено' },
+  { merchant: 'GitHub Enterprise', cat: 'Инструменты разработки', amount: '-$42.00', isIncome: false, icon: 'music', status: 'Исполнено' },
+  { merchant: 'Deel Inc. Wire', cat: 'Международный перевод', amount: '+$2,900.00', isIncome: true, icon: 'arrow-down-left', status: 'Зачислено' }
 ];
 
 export class TransactionFeed {

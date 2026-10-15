@@ -1,0 +1,612 @@
+/* NFC Terminal */
+.nfc-pay-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.nfc-station-grid {
+  display: grid;
+  grid-template-columns: 440px 1fr;
+  gap: 48px;
+  align-items: center;
+  background: var(--bg-surface);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: 32px;
+  padding: 44px 48px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: visible;
+}
+
+.nfc-terminal-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+  z-index: 5;
+}
+
+/* Receipt */
+.pos-printer-slot {
+  position: relative;
+  width: 280px;
+  height: 350px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: -140px;
+  margin-bottom: -14px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.pos-receipt-paper {
+  position: absolute;
+  bottom: 0;
+  width: 260px;
+  background: #ffffff;
+  color: #0f172a;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  padding: 16px 14px 18px;
+  border-radius: 6px 6px 0 0;
+  box-shadow: 0 -12px 32px rgba(0, 0, 0, 0.6), 0 -2px 6px rgba(0, 0, 0, 0.3);
+  border-bottom: 3px dashed #94a3b8;
+  transform: translateY(105%);
+  opacity: 0;
+  will-change: transform, opacity;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: auto;
+}
+
+.receipt-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  text-align: center;
+}
+
+.receipt-logo {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #090e17;
+}
+
+.receipt-sub {
+  font-size: 8px;
+  letter-spacing: 0.8px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.receipt-divider {
+  border-top: 1px solid #e2e8f0;
+  margin: 4px 0;
+}
+
+.receipt-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 9.5px;
+}
+
+.rc-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rc-l { color: #64748b; font-weight: 600; }
+.rc-r { color: #0f172a; font-weight: 700; }
+
+.receipt-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 800;
+  color: #090e17;
+  padding: 4px 0;
+}
+
+.rc-total-val {
+  font-size: 15px;
+  color: #0284c7;
+  font-weight: 800;
+}
+
+.receipt-cashback-badge {
+  background: #ecfdf5;
+  color: #059669;
+  border-radius: 4px;
+  padding: 4px 8px;
+  text-align: center;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.receipt-barcode {
+  text-align: center;
+  letter-spacing: 3px;
+  font-size: 10px;
+  color: #334155;
+  opacity: 0.85;
+}
+
+/* POS Hardware */
+.pos-device {
+  width: 100%;
+  max-width: 350px;
+  background: #141418;
+  border-radius: 28px;
+  padding: 24px 20px 28px;
+  box-shadow: 
+    0 32px 64px -12px rgba(0, 0, 0, 0.8),
+    0 10px 24px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+  transition: box-shadow 0.4s ease;
+}
+
+.pos-device.pos-device-active {
+  box-shadow: 
+    0 36px 70px -16px rgba(16, 185, 129, 0.35),
+    0 0 32px rgba(16, 185, 129, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.pos-bezel-reflection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 60%);
+  border-radius: 28px 28px 0 0;
+  pointer-events: none;
+}
+
+/* OLED Screen */
+.pos-screen {
+  background: #09090b;
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 190px;
+}
+
+.pos-screen-statusbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 9.5px;
+  font-family: var(--font-mono);
+  color: #64748b;
+  letter-spacing: 0.5px;
+}
+
+.pos-screen-content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pos-store-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pos-store-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.pos-store-info h4 {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.pos-store-info span {
+  font-size: 10.5px;
+  color: #94a3b8;
+}
+
+.pos-sum-display {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-weight: 800;
+  color: #ffffff;
+  padding: 2px 0;
+}
+
+.pos-currency {
+  font-size: 22px;
+  color: #10b981;
+}
+
+.pos-amount {
+  font-size: 38px;
+  letter-spacing: -1px;
+}
+
+/* Status Banner */
+.pos-state-banner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #1c1c22;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #cbd5e1;
+  transition: all 0.3s ease;
+}
+
+.pos-pulse-ring {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: pulseLight 1.8s infinite;
+}
+
+.pos-state-banner.state-reading {
+  background: rgba(16, 185, 129, 0.16);
+  color: #6ee7b7;
+}
+
+.pos-state-banner.state-authorizing {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fcd34d;
+}
+
+.pos-state-banner.state-approved {
+  background: rgba(16, 185, 129, 0.2);
+  box-shadow: 0 0 22px rgba(16, 185, 129, 0.28);
+  padding: 6px 12px;
+}
+
+/* Checkmark Animation */
+.pos-apple-check {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.apple-check-svg {
+  width: 26px;
+  height: 26px;
+  display: block;
+}
+
+.apple-check-circle {
+  stroke: #10b981;
+  stroke-width: 2.4;
+  stroke-dasharray: 90;
+  stroke-dashoffset: 90;
+  animation: drawAppleCircle 0.38s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.apple-check-tick {
+  stroke: #10b981;
+  stroke-width: 2.8;
+  stroke-dasharray: 25;
+  stroke-dashoffset: 25;
+  animation: drawAppleTick 0.28s cubic-bezier(0.65, 0, 0.45, 1) 0.2s forwards;
+}
+
+@keyframes drawAppleCircle {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawAppleTick {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.pos-approved-text-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  line-height: 1.25;
+}
+
+.pos-approved-main {
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  color: #34d399;
+}
+
+.pos-approved-crypto {
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #94a3b8;
+}
+
+.pos-device.pos-device-success {
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.85), 0 0 50px rgba(16, 185, 129, 0.5), inset 0 0 16px rgba(16, 185, 129, 0.25);
+  transition: box-shadow 0.35s ease;
+}
+
+.pos-screen.screen-success-flash {
+  box-shadow: inset 0 0 36px rgba(16, 185, 129, 0.35);
+  transition: box-shadow 0.4s ease;
+}
+
+.pos-nfc-target {
+  height: 116px;
+  border-radius: 18px;
+  background: #18181c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.pos-nfc-target:hover {
+  background: #24242c;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+.pos-nfc-target.is-active-tap {
+  background: rgba(16, 185, 129, 0.2);
+  box-shadow: 0 0 28px rgba(16, 185, 129, 0.4), inset 0 1px 0 rgba(16, 185, 129, 0.5);
+}
+
+.nfc-symbol-emblem {
+  color: #94a3b8;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.pos-nfc-target:hover .nfc-symbol-emblem {
+  color: #10b981;
+  transform: scale(1.08);
+}
+
+.is-active-tap .nfc-symbol-emblem {
+  color: #10b981;
+  transform: scale(1.15);
+}
+
+.nfc-target-lbl {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #64748b;
+  transition: color 0.3s ease;
+}
+
+.pos-nfc-target:hover .nfc-target-lbl {
+  color: #cbd5e1;
+}
+
+.nfc-wave-box {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.nfc-ring {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #10b981;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nfc-ring.ring-2 {
+  border-color: #34d399;
+}
+
+.nfc-ring.ring-3 {
+  border-color: #6ee7b7;
+}
+
+.nfc-controls-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  position: relative;
+  z-index: 50;
+}
+
+.nfc-panel-header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nfc-badge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #10b981;
+  background: #18181c;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+.nfc-panel-header h3 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.nfc-panel-header p {
+  font-size: 13.5px;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+.nfc-select-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nfc-select-group label {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pos-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pos-store-pill,
+.pos-card-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: none;
+  background: #18181c;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #cbd5e1;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.pos-store-pill:hover,
+.pos-card-pill:hover {
+  background: #24242c;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.pos-store-pill.active,
+.pos-card-pill.active {
+  background: #ffffff;
+  color: #09090b;
+  font-weight: 700;
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2);
+}
+
+/* NFC Floating Card */
+.nfc-card-dock {
+  perspective: 1200px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 10px 0;
+  overflow: visible;
+  z-index: 60;
+  background: radial-gradient(ellipse at center, rgba(16, 185, 129, 0.05) 0%, transparent 70%);
+  border-radius: 20px;
+}
+
+.nfc-floating-card {
+  width: 320px;
+  height: 195px;
+  border-radius: 18px;
+  transform-style: preserve-3d;
+  cursor: grab;
+  will-change: transform;
+  transition: filter 0.3s ease, transform 0.3s ease;
+  user-select: none;
+  position: relative;
+  z-index: 100;
+}
+
+.nfc-floating-card:hover {
+  filter: drop-shadow(0 16px 36px rgba(16, 185, 129, 0.25));
+  transform: scale(1.03) translateY(-4px);
+}
+
+.nfc-floating-card .card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  transform-style: preserve-3d;
+}
+
+.nfc-floating-card .card-face {
+  border-radius: 18px;
+  padding: 22px;
+}
+
+.nfc-actions-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.nfc-tap-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  font-size: 14.5px;
+}
+
+.nfc-tap-action-btn.is-busy {
+  opacity: 0.8;
+  pointer-events: none;
+}
+

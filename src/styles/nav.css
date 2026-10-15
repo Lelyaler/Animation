@@ -1,0 +1,236 @@
+/* Layout */
+.app-layout {
+  position: relative;
+  z-index: 1;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 12px 32px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* Navigation */
+.main-nav {
+  position: sticky;
+  top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 24px;
+  background: rgba(18, 18, 22, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 999px;
+  box-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.7);
+  z-index: 100;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.brand-symbol {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #09090b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-text {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #94a3b8;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.nav-menu a:hover {
+  color: #ffffff;
+}
+
+/* Dynamic Island */
+.dynamic-island-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.island-pill {
+  background: #18181c;
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 5px 12px;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+  transition: all 0.35s var(--ease-spring);
+  user-select: none;
+}
+
+.island-collapsed-content {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.island-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 6px #10b981;
+  animation: islandDotPulse 2s infinite;
+}
+
+@keyframes islandDotPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+}
+
+.island-brand-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #f1f5f9;
+}
+
+.island-expanded-content {
+  display: none;
+  align-items: center;
+  gap: 10px;
+}
+
+.island-pill.is-expanded {
+  border-radius: 16px;
+  padding: 6px 14px;
+  background: #0f0f13;
+}
+
+.island-pill.is-expanded .island-collapsed-content {
+  display: none;
+}
+
+.island-pill.is-expanded .island-expanded-content {
+  display: flex;
+}
+
+.island-icon-box {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.18);
+  color: #34d399;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.island-text-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.island-title {
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.island-desc {
+  font-size: 10px;
+  color: #94a3b8;
+  line-height: 1.2;
+}
+
+.island-badge {
+  font-size: 10px;
+  font-weight: 700;
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.15);
+  padding: 2px 6px;
+  border-radius: 999px;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-btn {
+  padding: 8px 18px;
+  font-size: 13px;
+}
+
+
+/* Mobile Nav Toggle */
+.mobile-nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.07);
+  border: none;
+  cursor: pointer;
+  gap: 5px;
+  padding: 0;
+  transition: all 0.2s ease;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.mobile-nav-toggle:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.mobile-nav-toggle .toggle-bar {
+  width: 18px;
+  height: 2px;
+  background: #cbd5e1;
+  border-radius: 2px;
+  transition: all 0.25s ease;
+  transform-origin: center;
+}
+
+.mobile-nav-toggle.is-active .toggle-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+  background: #10b981;
+}
+
+.mobile-nav-toggle.is-active .toggle-bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.mobile-nav-toggle.is-active .toggle-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+  background: #10b981;
+}
+
