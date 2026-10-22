@@ -14,25 +14,25 @@
 }
 
 .footer-brand {
-  max-width: 380px;
+  max-width: 440px;
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
 .footer-brand p {
-  font-size: 13px;
+  font-size: 14.5px;
   color: var(--text-secondary);
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 .footer-links {
   display: flex;
-  gap: 24px;
+  gap: 28px;
 }
 
 .footer-links a {
-  font-size: 13px;
+  font-size: 14.5px;
   color: var(--text-secondary);
   text-decoration: none;
   transition: color 0.15s ease;
@@ -43,7 +43,7 @@
 }
 
 .footer-bottom {
-  font-size: 12px;
+  font-size: 13.5px;
   color: var(--text-tertiary);
 }
 

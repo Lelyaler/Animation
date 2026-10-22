@@ -16,9 +16,9 @@
   background: #ffffff;
   color: #09090b;
   border: none;
-  padding: 13px 26px;
+  padding: 14px 28px;
   border-radius: 999px;
-  font-size: 14.5px;
+  font-size: 15.5px;
   font-weight: 700;
   cursor: pointer;
   box-shadow: 0 4px 18px rgba(255, 255, 255, 0.18);
@@ -45,9 +45,9 @@
   background: var(--bg-surface-subtle);
   border: none;
   color: var(--text-primary);
-  padding: 13px 26px;
+  padding: 14px 28px;
   border-radius: 999px;
-  font-size: 14.5px;
+  font-size: 15.5px;
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
