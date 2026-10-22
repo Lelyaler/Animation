@@ -4,6 +4,8 @@
   display: flex;
   flex-direction: column;
   gap: 36px;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 750px;
 }
 
 .nfc-station-grid {
@@ -225,7 +227,8 @@
   font-size: 18px;
 }
 
-.pos-store-info h4 {
+.pos-store-info h4,
+.pos-store-info .pos-store-name-title {
   font-size: 13.5px;
   font-weight: 700;
   color: #ffffff;
@@ -498,12 +501,14 @@
   gap: 8px;
 }
 
-.nfc-select-group label {
+.nfc-select-group label,
+.nfc-select-group .nfc-group-label {
   font-size: 12.5px;
   font-weight: 700;
   color: var(--text-tertiary);
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  display: block;
 }
 
 .pos-pills-row {

@@ -14,29 +14,37 @@ document.addEventListener('DOMContentLoaded', () => {
     new DynamicIsland(islandWrap);
   }
 
-  const txContainer = document.getElementById('tx-feed-container');
-  if (txContainer) {
-    new TransactionFeed(txContainer);
-  }
-
   const orbitalStage = document.getElementById('orbital-stage');
   if (orbitalStage) {
     new OrbitalLoop(orbitalStage);
   }
 
-  const nfcContainer = document.getElementById('nfc-station-container');
-  if (nfcContainer) {
-    new NFCTerminal(nfcContainer);
-  }
+  const initDeferredComponents = () => {
+    const txContainer = document.getElementById('tx-feed-container');
+    if (txContainer) {
+      new TransactionFeed(txContainer);
+    }
 
-  const exchangeContainer = document.getElementById('exchange-calc-container');
-  if (exchangeContainer) {
-    new ExchangeCalculator(exchangeContainer);
-  }
+    const nfcContainer = document.getElementById('nfc-station-container');
+    if (nfcContainer) {
+      new NFCTerminal(nfcContainer);
+    }
 
-  const customizerContainer = document.getElementById('card-customizer-container');
-  if (customizerContainer) {
-    new CardCustomizer(customizerContainer);
+    const exchangeContainer = document.getElementById('exchange-calc-container');
+    if (exchangeContainer) {
+      new ExchangeCalculator(exchangeContainer);
+    }
+
+    const customizerContainer = document.getElementById('card-customizer-container');
+    if (customizerContainer) {
+      new CardCustomizer(customizerContainer);
+    }
+  };
+
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(initDeferredComponents, { timeout: 1200 });
+  } else {
+    setTimeout(initDeferredComponents, 120);
   }
 
   const spotlight = document.getElementById('ambient-cursor-spotlight');

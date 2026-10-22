@@ -17,7 +17,11 @@
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap">
+    </noscript>
     <link rel="stylesheet" href="./src/style.css" />
   </head>
   <body class="bg-light antialiased">
@@ -204,7 +208,7 @@
 
           <div class="orbit-inspect-bar" id="orbit-inspect-bar">
             <span class="inspect-hint"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 4px;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>Кликните по карте для переворота (3D Flip)</span>
-            <button class="inspect-close-btn" id="inspect-close-btn" type="button"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -1px; margin-right: 4px;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>Вернуть в орбиту</button>
+            <button class="inspect-close-btn" id="inspect-close-btn" type="button" aria-label="Вернуть карту в орбиту"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -1px; margin-right: 4px;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>Вернуть в орбиту</button>
           </div>
 
           <div class="hero-orbit-guide">
@@ -267,7 +271,7 @@
               </div>
 
               <div class="calc-swap-wrapper">
-                <button class="calc-swap-btn" id="calc-swap-btn" type="button" title="Поменять валюты местами">
+                <button class="calc-swap-btn" id="calc-swap-btn" type="button" aria-label="Поменять валюты местами" title="Поменять валюты местами">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 5h18"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 19H3"></path></svg>
                 </button>
               </div>
@@ -300,9 +304,9 @@
               <div class="chart-header">
                 <span class="ch-lbl">Динамика рыночной стоимости</span>
                 <div class="chart-period-tabs">
-                  <button class="chart-period-btn active">24 ч</button>
-                  <button class="chart-period-btn">7 дн</button>
-                  <button class="chart-period-btn">1 мес</button>
+                  <button class="chart-period-btn active" type="button" aria-label="Период котировок 24 часа">24 ч</button>
+                  <button class="chart-period-btn" type="button" aria-label="Период котировок 7 дней">7 дн</button>
+                  <button class="chart-period-btn" type="button" aria-label="Период котировок 1 месяц">1 мес</button>
                 </div>
               </div>
               <div id="exchange-chart-svg-wrap" class="exchange-chart-svg-wrap"></div>
@@ -353,25 +357,25 @@
               </div>
 
               <div class="opt-group">
-                <label>Материал карты:</label>
+                <span class="opt-label">Материал карты:</span>
                 <div class="material-pills-row">
-                  <button class="mat-btn active" data-mat="obsidian" type="button">
+                  <button class="mat-btn active" data-mat="obsidian" type="button" aria-label="Материал Midnight Obsidian">
                     <span class="color-dot dot-obsidian"></span>
                     <span>Midnight Obsidian</span>
                   </button>
-                  <button class="mat-btn" data-mat="platinum" type="button">
+                  <button class="mat-btn" data-mat="platinum" type="button" aria-label="Материал Brushed Titanium">
                     <span class="color-dot dot-platinum"></span>
                     <span>Brushed Titanium</span>
                   </button>
-                  <button class="mat-btn" data-mat="emerald" type="button">
+                  <button class="mat-btn" data-mat="emerald" type="button" aria-label="Материал Racing Emerald">
                     <span class="color-dot dot-emerald"></span>
                     <span>Racing Emerald</span>
                   </button>
-                  <button class="mat-btn" data-mat="sapphire" type="button">
+                  <button class="mat-btn" data-mat="sapphire" type="button" aria-label="Материал Royal Sapphire">
                     <span class="color-dot dot-sapphire"></span>
                     <span>Royal Sapphire</span>
                   </button>
-                  <button class="mat-btn" data-mat="hologram" type="button">
+                  <button class="mat-btn" data-mat="hologram" type="button" aria-label="Материал Prism Hologram">
                     <span class="color-dot dot-hologram"></span>
                     <span>Prism Hologram</span>
                   </button>
@@ -412,9 +416,9 @@
                   <span class="tx-subtitle">Синхронизация в реальном времени</span>
                 </div>
                 <div class="tx-filter-pills" id="tx-filter-pills">
-                  <button class="tx-pill-btn active" data-filter="all">Все</button>
-                  <button class="tx-pill-btn" data-filter="income">Доходы</button>
-                  <button class="tx-pill-btn" data-filter="expense">Расходы</button>
+                  <button class="tx-pill-btn active" data-filter="all" type="button" aria-label="Все транзакции">Все</button>
+                  <button class="tx-pill-btn" data-filter="income" type="button" aria-label="Только доходы">Доходы</button>
+                  <button class="tx-pill-btn" data-filter="expense" type="button" aria-label="Только расходы">Расходы</button>
                 </div>
               </div>
               <div class="tx-feed-container" id="tx-feed-container"></div>
