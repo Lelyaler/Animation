@@ -594,7 +594,7 @@ export class NFCTerminal {
 
     gsap.fromTo(receipt,
       { y: '105%', opacity: 0 },
-      { y: '0%', opacity: 1, duration: 0.85, ease: 'power3.out' }
+      { y: '-12px', opacity: 1, duration: 0.85, ease: 'power3.out' }
     );
   }
 
