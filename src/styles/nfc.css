@@ -36,14 +36,14 @@
 .pos-printer-slot {
   position: relative;
   width: 280px;
-  height: 350px;
+  height: 390px;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  margin-top: -140px;
+  margin-top: -180px;
   margin-bottom: -14px;
-  z-index: 1;
+  z-index: 10;
   pointer-events: none;
 }
 

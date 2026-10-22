@@ -1,4 +1,9 @@
 /* Card Customizer */
+.customizer-section {
+  margin-top: 110px;
+  scroll-margin-top: 100px;
+}
+
 .customizer-grid {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
