@@ -11,7 +11,7 @@ export const STORES = [
     id: 'coffee',
     name: 'Starbucks Reserve',
     category: 'Кафе и встречи',
-    icon: '☕',
+    icon: `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>`,
     amount: 8.50,
     currency: '$',
     cashback: 0.30,
@@ -22,7 +22,7 @@ export const STORES = [
     id: 'software',
     name: 'JetBrains Tools',
     category: 'Лицензии и ПО',
-    icon: '💻',
+    icon: `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>`,
     amount: 289.00,
     currency: '$',
     cashback: 10.12,
@@ -33,7 +33,7 @@ export const STORES = [
     id: 'airline',
     name: 'Lufthansa Flights',
     category: 'Авиаперелеты',
-    icon: '✈️',
+    icon: `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"></path></svg>`,
     amount: 1420.00,
     currency: '$',
     cashback: 49.70,
@@ -44,7 +44,7 @@ export const STORES = [
     id: 'hotel',
     name: 'Hyatt Hotels',
     category: 'Отели и проживание',
-    icon: '🏨',
+    icon: `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path><path d="M6 12H4a2 2 0 0 0-2 2v8h4"></path><path d="M18 9h2a2 2 0 0 1 2 2v11h-4"></path><path d="M10 6h4"></path><path d="M10 10h4"></path><path d="M10 14h4"></path><path d="M10 18h4"></path></svg>`,
     amount: 680.00,
     currency: '$',
     cashback: 23.80,
@@ -124,7 +124,7 @@ export class NFCTerminal {
               <div class="pos-screen-statusbar">
                 <span class="pos-wifi">●●● 5G Encrypted</span>
                 <span class="pos-status-clock">12:45 PM</span>
-                <span class="pos-battery">98% 🔋</span>
+                <span class="pos-battery">98% <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -1px; display: inline-block;"><rect x="1" y="6" width="18" height="12" rx="2"></rect><line x1="23" y1="11" x2="23" y2="13"></line><line x1="5" y1="10" x2="5" y2="14"></line><line x1="9" y1="10" x2="9" y2="14"></line><line x1="13" y1="10" x2="13" y2="14"></line></svg></span>
               </div>
 
               <div class="pos-screen-content" id="pos-screen-content">
@@ -312,7 +312,7 @@ export class NFCTerminal {
     const storeCat = this.container.querySelector('#pos-store-cat');
     const amountVal = this.container.querySelector('#pos-amount-val');
 
-    if (storeIcon) storeIcon.textContent = store.icon;
+    if (storeIcon) storeIcon.innerHTML = store.icon;
     if (storeName) storeName.textContent = store.name;
     if (storeCat) storeCat.textContent = store.category;
     if (amountVal) amountVal.textContent = store.amount.toFixed(2);
@@ -456,7 +456,7 @@ export class NFCTerminal {
       onComplete: () => {
         if (banner) {
           banner.innerHTML = `
-            <span class="pos-state-icon">🔒</span>
+            <span class="pos-state-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span>
             <span class="pos-state-text text-amber">Авторизация банка...</span>
           `;
           banner.className = 'pos-state-banner state-authorizing';
@@ -492,7 +492,7 @@ export class NFCTerminal {
 
         document.dispatchEvent(new CustomEvent('nova:notification', {
           detail: {
-            icon: '✓',
+            icon: 'check',
             title: `Оплата ${store.currency}${store.amount.toFixed(2)} успешна`,
             desc: `${store.name} • Кешбэк +${store.currency}${store.cashback.toFixed(2)}`,
             badge: '+3.5%'
