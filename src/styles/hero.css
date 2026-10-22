@@ -507,16 +507,10 @@
   filter: brightness(1.2) drop-shadow(0 0 18px rgba(16, 185, 129, 0.45)) !important;
 }
 
-/* Currency Ticker */
+/* Currency Ticker - Full Width Ribbon (Outside Any Container) */
 .live-ticker-marquee {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  margin-top: 56px;
-  margin-bottom: 56px;
+  width: 100%;
+  margin: 52px 0;
   overflow: hidden;
   background: rgba(14, 14, 18, 0.88);
   backdrop-filter: blur(20px);
@@ -527,6 +521,8 @@
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
   display: flex;
   user-select: none;
+  position: relative;
+  z-index: 2;
 }
 
 .ticker-track {
