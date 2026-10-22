@@ -7,7 +7,7 @@
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 2px;
-  color: #10b981;
+  color: var(--accent-emerald);
   text-transform: uppercase;
 }
 
@@ -15,13 +15,13 @@
   font-size: clamp(28px, 3.5vw, 42px);
   font-weight: 800;
   letter-spacing: -0.8px;
-  color: #ffffff;
+  color: var(--text-primary);
   margin: 8px 0 10px;
 }
 
 .section-desc {
   font-size: 16px;
-  color: #94a3b8;
+  color: var(--text-secondary);
   max-width: 620px;
   margin: 0 auto;
   line-height: 1.5;
@@ -54,12 +54,12 @@
 .calc-col label {
   font-size: 13px;
   font-weight: 600;
-  color: #94a3b8;
+  color: var(--text-secondary);
 }
 
 .calc-input-wrapper {
   display: flex;
-  background: #18181c;
+  background: var(--bg-surface-subtle);
   border-radius: 14px;
   padding: 8px 14px;
   align-items: center;
@@ -68,15 +68,15 @@
 }
 
 .calc-input-wrapper:focus-within {
-  background: #202026;
-  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.4);
+  background: var(--bg-surface-hover);
+  box-shadow: 0 0 0 2px var(--accent-emerald);
 }
 
 .calc-input-wrapper input {
   flex: 1;
   background: transparent;
   border: none;
-  color: #ffffff;
+  color: var(--text-primary);
   font-family: var(--font-mono);
   font-size: 21px;
   font-weight: 700;
@@ -85,9 +85,9 @@
 }
 
 .currency-select {
-  background: #222228;
+  background: var(--bg-surface-hover);
   border: none;
-  color: #ffffff;
+  color: var(--text-primary);
   border-radius: 8px;
   padding: 7px 12px;
   font-size: 14px;
@@ -106,8 +106,8 @@
   height: 44px;
   border-radius: 50%;
   border: none;
-  background: #1e1e24;
-  color: #10b981;
+  background: var(--bg-surface-subtle);
+  color: var(--accent-emerald);
   font-size: 19px;
   cursor: pointer;
   display: flex;
@@ -118,8 +118,8 @@
 }
 
 .calc-swap-btn:hover {
-  background: #282830;
-  color: #34d399;
+  background: var(--bg-surface-hover);
+  color: var(--accent-emerald-soft);
   transform: scale(1.08);
 }
 
@@ -136,11 +136,11 @@
   align-items: center;
   gap: 8px;
   font-size: 14px;
-  color: #94a3b8;
+  color: var(--text-secondary);
 }
 
 .rate-indicator strong {
-  color: #ffffff;
+  color: var(--text-primary);
   font-family: var(--font-mono);
 }
 
@@ -169,14 +169,14 @@
   align-items: center;
   justify-content: space-between;
   font-size: 13px;
-  color: #94a3b8;
+  color: var(--text-secondary);
   margin-bottom: 14px;
 }
 
 .chart-period-tabs {
   display: flex;
   gap: 4px;
-  background: #18181c;
+  background: var(--bg-surface-subtle);
   padding: 3px;
   border-radius: 8px;
 }
@@ -184,7 +184,7 @@
 .chart-period-btn {
   background: transparent;
   border: none;
-  color: #94a3b8;
+  color: var(--text-secondary);
   font-size: 12px;
   font-weight: 600;
   padding: 4px 10px;
@@ -194,9 +194,10 @@
 }
 
 .chart-period-btn.active {
-  background: #10b981;
-  color: #ffffff;
-  box-shadow: 0 2px 10px rgba(16, 185, 129, 0.4);
+  background: var(--accent-emerald);
+  color: #09090b;
+  font-weight: 700;
+  box-shadow: 0 2px 10px var(--accent-emerald-glow);
 }
 
 .exchange-chart-svg-wrap {

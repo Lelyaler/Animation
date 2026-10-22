@@ -42,9 +42,9 @@
 }
 
 .secondary-btn {
-  background: #1a1a1f;
+  background: var(--bg-surface-subtle);
   border: none;
-  color: #f8fafc;
+  color: var(--text-primary);
   padding: 13px 26px;
   border-radius: 999px;
   font-size: 14.5px;
@@ -61,7 +61,7 @@
 }
 
 .secondary-btn:hover {
-  background: #25252c;
+  background: var(--bg-surface-hover);
   color: #ffffff;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);

@@ -95,14 +95,14 @@
     border-radius: 12px;
     font-size: 15px;
     font-weight: 600;
-    color: #e2e8f0;
+    color: var(--text-primary);
     background: rgba(255, 255, 255, 0.03);
     transition: background 0.2s ease, color 0.2s ease;
   }
 
   .nav-menu a:hover {
-    background: rgba(16, 185, 129, 0.14);
-    color: #34d399;
+    background: var(--accent-emerald-bg);
+    color: var(--accent-emerald-soft);
   }
 
   .hero-section {

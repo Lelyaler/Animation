@@ -60,14 +60,14 @@
 
 .nav-menu a {
   text-decoration: none;
-  color: #94a3b8;
+  color: var(--text-secondary);
   font-size: 14px;
   font-weight: 500;
   transition: color 0.15s ease;
 }
 
 .nav-menu a:hover {
-  color: #ffffff;
+  color: var(--text-primary);
 }
 
 /* Dynamic Island */
@@ -162,15 +162,15 @@
 
 .island-desc {
   font-size: 10px;
-  color: #94a3b8;
+  color: var(--text-secondary);
   line-height: 1.2;
 }
 
 .island-badge {
   font-size: 10px;
   font-weight: 700;
-  color: #34d399;
-  background: rgba(16, 185, 129, 0.15);
+  color: var(--accent-emerald-soft);
+  background: var(--accent-emerald-bg);
   padding: 2px 6px;
   border-radius: 999px;
 }
@@ -213,7 +213,7 @@
 .mobile-nav-toggle .toggle-bar {
   width: 18px;
   height: 2px;
-  background: #cbd5e1;
+  background: var(--text-secondary);
   border-radius: 2px;
   transition: all 0.25s ease;
   transform-origin: center;
@@ -221,7 +221,7 @@
 
 .mobile-nav-toggle.is-active .toggle-bar:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
-  background: #10b981;
+  background: var(--accent-emerald);
 }
 
 .mobile-nav-toggle.is-active .toggle-bar:nth-child(2) {
@@ -231,6 +231,6 @@
 
 .mobile-nav-toggle.is-active .toggle-bar:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
-  background: #10b981;
+  background: var(--accent-emerald);
 }
 
