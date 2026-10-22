@@ -48,6 +48,7 @@
 
 html {
   font-family: var(--font-main);
+  font-size: 17px;
   background-color: var(--bg-page);
   color: var(--text-primary);
   scroll-behavior: smooth;
