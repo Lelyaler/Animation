@@ -1,12 +1,12 @@
 :root {
-  /* Surfaces & Backgrounds - Deep Obsidian & Translucent Frosted Basalt */
+  /* Surfaces & Backgrounds */
   --bg-page: #0a0a0c;
   --bg-surface: rgba(18, 18, 22, 0.86);
   --bg-surface-subtle: rgba(24, 24, 28, 0.82);
   --bg-surface-hover: rgba(34, 34, 40, 0.88);
   --bg-surface-active: rgba(40, 40, 48, 0.92);
 
-  /* Natural Human Typography Hierarchy (Warm Graphite / Titanium) */
+  /* Typography Hierarchy */
   --text-primary: #ededf0;
   --text-secondary: #9e9ea7;
   --text-tertiary: #6b6b74;
@@ -18,7 +18,7 @@
   --brand-blue: #10b981;
   --brand-blue-hover: #059669;
 
-  /* Restrained, Refined Emerald & Sage Accent */
+  /* Accent Colors */
   --accent-emerald: #10b981;
   --accent-emerald-soft: #34d399;
   --accent-emerald-dark: #059669;
