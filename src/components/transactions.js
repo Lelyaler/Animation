@@ -1,4 +1,5 @@
 import gsap from 'gsap';
+import { ICONS } from './icons.js';
 
 export const SAMPLE_TX = [
   { merchant: 'AWS EMEA Cloud', cat: 'Инфраструктура', amount: '-$384.20', isIncome: false, icon: 'smartphone', status: 'Исполнено' },
@@ -68,14 +69,13 @@ export class TransactionFeed {
   createRowHtml(tx) {
     const isPlus = tx.isIncome;
     const amountClass = isPlus ? 'tx-amount-plus' : 'tx-amount-minus';
+    const directionIcon = isPlus ? ICONS.arrowDown(12) : ICONS.arrowUp(12);
 
     return `
       <div class="tx-row">
         <div class="tx-left">
           <div class="tx-icon-box ${isPlus ? 'icon-plus' : ''}">
-            ${isPlus 
-              ? `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>`
-              : `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>`}
+            ${directionIcon}
           </div>
           <div class="tx-details">
             <span class="tx-merchant">${tx.merchant}</span>
