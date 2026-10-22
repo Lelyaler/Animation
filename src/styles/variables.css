@@ -1,10 +1,10 @@
 :root {
-  /* Surfaces & Backgrounds - Deep Obsidian & Warm Basalt */
+  /* Surfaces & Backgrounds - Deep Obsidian & Translucent Frosted Basalt */
   --bg-page: #0a0a0c;
-  --bg-surface: #121215;
-  --bg-surface-subtle: #18181c;
-  --bg-surface-hover: #202025;
-  --bg-surface-active: #27272e;
+  --bg-surface: rgba(18, 18, 22, 0.86);
+  --bg-surface-subtle: rgba(24, 24, 28, 0.82);
+  --bg-surface-hover: rgba(34, 34, 40, 0.88);
+  --bg-surface-active: rgba(40, 40, 48, 0.92);
 
   /* Natural Human Typography Hierarchy (Warm Graphite / Titanium) */
   --text-primary: #ededf0;

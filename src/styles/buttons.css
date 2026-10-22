@@ -1,6 +1,8 @@
 /* Card Surface */
 .light-card {
   background: var(--bg-surface);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   border: none;
   border-radius: 20px;
   box-shadow: var(--shadow-card);
