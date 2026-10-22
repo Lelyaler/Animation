@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const matName = modalSelectedMaterial ? modalSelectedMaterial.textContent : 'Obsidian';
         document.dispatchEvent(new CustomEvent('nova:notification', {
           detail: {
-            icon: '💳',
+            icon: 'card',
             title: 'Карта отправлена в производство',
             desc: `DHL Express • ${matName}`,
             badge: 'Заявка'
