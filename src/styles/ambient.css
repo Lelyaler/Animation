@@ -99,16 +99,16 @@
 
 .ambient-cursor-spotlight {
   position: absolute;
-  width: 580px;
-  height: 580px;
+  width: 680px;
+  height: 680px;
   top: 0;
   left: 0;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.04) 0%, rgba(255, 255, 255, 0.015) 40%, transparent 70%);
-  filter: blur(50px);
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.22) 0%, rgba(52, 211, 153, 0.10) 25%, rgba(16, 185, 129, 0.03) 50%, transparent 70%);
+  filter: blur(48px);
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.4s ease;
   will-change: transform;
 }
 

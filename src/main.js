@@ -57,9 +57,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
 
     const updateSpotlight = () => {
-      currentX += (targetX - currentX) * 0.07;
-      currentY += (targetY - currentY) * 0.07;
-      spotlight.style.transform = `translate3d(${currentX - 290}px, ${currentY - 290}px, 0)`;
+      currentX += (targetX - currentX) * 0.08;
+      currentY += (targetY - currentY) * 0.08;
+      spotlight.style.transform = `translate3d(${currentX - 340}px, ${currentY - 340}px, 0)`;
       requestAnimationFrame(updateSpotlight);
     };
     requestAnimationFrame(updateSpotlight);
