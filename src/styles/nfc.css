@@ -198,7 +198,7 @@
   align-items: center;
   font-size: 9.5px;
   font-family: var(--font-mono);
-  color: #64748b;
+  color: var(--text-tertiary);
   letter-spacing: 0.5px;
 }
 
@@ -233,7 +233,7 @@
 
 .pos-store-info span {
   font-size: 10.5px;
-  color: #94a3b8;
+  color: var(--text-secondary);
 }
 
 .pos-sum-display {
@@ -242,13 +242,13 @@
   gap: 4px;
   font-family: var(--font-mono);
   font-weight: 800;
-  color: #ffffff;
+  color: var(--text-primary);
   padding: 2px 0;
 }
 
 .pos-currency {
   font-size: 22px;
-  color: #10b981;
+  color: var(--accent-emerald);
 }
 
 .pos-amount {
@@ -262,11 +262,11 @@
   align-items: center;
   gap: 8px;
   padding: 8px 12px;
-  background: #1c1c22;
+  background: var(--bg-surface-subtle);
   border-radius: 10px;
   font-size: 11px;
   font-weight: 600;
-  color: #cbd5e1;
+  color: var(--text-secondary);
   transition: all 0.3s ease;
 }
 
@@ -358,7 +358,7 @@
   font-size: 8px;
   font-weight: 600;
   letter-spacing: 0.5px;
-  color: #94a3b8;
+  color: var(--text-secondary);
 }
 
 .pos-device.pos-device-success {
@@ -398,17 +398,17 @@
 }
 
 .nfc-symbol-emblem {
-  color: #94a3b8;
+  color: var(--text-secondary);
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .pos-nfc-target:hover .nfc-symbol-emblem {
-  color: #10b981;
+  color: var(--accent-emerald);
   transform: scale(1.08);
 }
 
 .is-active-tap .nfc-symbol-emblem {
-  color: #10b981;
+  color: var(--accent-emerald);
   transform: scale(1.15);
 }
 
@@ -416,12 +416,12 @@
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 1.5px;
-  color: #64748b;
+  color: var(--text-tertiary);
   transition: color 0.3s ease;
 }
 
 .pos-nfc-target:hover .nfc-target-lbl {
-  color: #cbd5e1;
+  color: var(--text-primary);
 }
 
 .nfc-wave-box {
@@ -488,7 +488,7 @@
 
 .nfc-panel-header p {
   font-size: 13.5px;
-  color: #94a3b8;
+  color: var(--text-secondary);
   line-height: 1.5;
 }
 
@@ -501,7 +501,7 @@
 .nfc-select-group label {
   font-size: 11.5px;
   font-weight: 700;
-  color: #64748b;
+  color: var(--text-tertiary);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -520,10 +520,10 @@
   padding: 8px 14px;
   border-radius: 999px;
   border: none;
-  background: #18181c;
+  background: var(--bg-surface-subtle);
   font-size: 12.5px;
   font-weight: 600;
-  color: #cbd5e1;
+  color: var(--text-secondary);
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   transition: all 0.2s ease;
@@ -531,8 +531,8 @@
 
 .pos-store-pill:hover,
 .pos-card-pill:hover {
-  background: #24242c;
-  color: #ffffff;
+  background: var(--bg-surface-hover);
+  color: var(--text-primary);
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }

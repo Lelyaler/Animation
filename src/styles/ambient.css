@@ -2,13 +2,11 @@
 .light-ambient-bg {
   position: fixed;
   inset: 0;
-  background: linear-gradient(180deg, #09090b 0%, #0f0f13 50%, #060608 100%);
+  background: linear-gradient(180deg, #0a0a0c 0%, #101013 50%, #070709 100%);
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
 }
-
-
 
 .ambient-orb {
   position: absolute;
@@ -22,8 +20,8 @@
   height: 520px;
   left: 20%;
   top: 40px;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.24) 0%, rgba(5, 150, 105, 0.12) 35%, rgba(4, 120, 87, 0.03) 65%, transparent 75%);
-  filter: blur(55px);
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, rgba(5, 150, 105, 0.04) 35%, transparent 70%);
+  filter: blur(65px);
   animation: orbDrift1 16s ease-in-out infinite alternate;
 }
 
@@ -32,8 +30,8 @@
   height: 560px;
   right: 6%;
   top: 30%;
-  background: radial-gradient(circle, rgba(52, 211, 153, 0.20) 0%, rgba(16, 185, 129, 0.08) 40%, transparent 75%);
-  filter: blur(55px);
+  background: radial-gradient(circle, rgba(52, 211, 153, 0.06) 0%, rgba(16, 185, 129, 0.02) 40%, transparent 70%);
+  filter: blur(65px);
   animation: orbDrift2 18s ease-in-out infinite alternate;
 }
 
@@ -42,8 +40,8 @@
   height: 580px;
   left: 6%;
   top: 55%;
-  background: radial-gradient(circle, rgba(161, 161, 170, 0.14) 0%, rgba(113, 113, 122, 0.05) 40%, transparent 75%);
-  filter: blur(60px);
+  background: radial-gradient(circle, rgba(161, 161, 170, 0.05) 0%, rgba(113, 113, 122, 0.02) 40%, transparent 70%);
+  filter: blur(70px);
   animation: orbDrift3 20s ease-in-out infinite alternate;
 }
 
@@ -52,8 +50,8 @@
   height: 520px;
   left: 24%;
   bottom: -60px;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.18) 0%, rgba(6, 95, 70, 0.06) 45%, transparent 70%);
-  filter: blur(60px);
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.06) 0%, rgba(6, 95, 70, 0.02) 45%, transparent 70%);
+  filter: blur(70px);
   animation: orbDrift4 15s ease-in-out infinite alternate;
 }
 
@@ -63,16 +61,16 @@
   left: 10%;
   right: 10%;
   height: 360px;
-  background: radial-gradient(ellipse 65% 45% at 50% 50%, rgba(16, 185, 129, 0.16) 0%, rgba(52, 211, 153, 0.08) 50%, transparent 80%);
-  filter: blur(65px);
+  background: radial-gradient(ellipse 65% 45% at 50% 50%, rgba(16, 185, 129, 0.06) 0%, rgba(52, 211, 153, 0.02) 50%, transparent 80%);
+  filter: blur(75px);
   animation: auroraBreathe 12s ease-in-out infinite alternate;
   pointer-events: none;
 }
 
 @keyframes auroraBreathe {
-  0% { transform: scale(0.94) translateY(0); opacity: 0.65; }
-  50% { transform: scale(1.12) translateY(30px); opacity: 1; }
-  100% { transform: scale(0.92) translateY(-20px); opacity: 0.65; }
+  0% { transform: scale(0.94) translateY(0); opacity: 0.5; }
+  50% { transform: scale(1.12) translateY(30px); opacity: 0.8; }
+  100% { transform: scale(0.92) translateY(-20px); opacity: 0.5; }
 }
 
 @keyframes orbDrift1 {
@@ -99,8 +97,6 @@
   100% { transform: translate3d(70px, -20px, 0) scale(0.95); }
 }
 
-
-
 .ambient-cursor-spotlight {
   position: absolute;
   width: 580px;
@@ -108,7 +104,7 @@
   top: 0;
   left: 0;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, rgba(255, 255, 255, 0.02) 40%, transparent 70%);
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.04) 0%, rgba(255, 255, 255, 0.015) 40%, transparent 70%);
   filter: blur(50px);
   pointer-events: none;
   opacity: 0;

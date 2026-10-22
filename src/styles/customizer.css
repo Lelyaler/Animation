@@ -252,11 +252,11 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  background: #18181c;
+  background: var(--bg-surface-subtle);
   border: none;
   padding: 10px 14px;
   border-radius: 12px;
-  color: #94a3b8;
+  color: var(--text-secondary);
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
@@ -265,14 +265,14 @@
 }
 
 .mat-btn:hover {
-  background: #24242a;
-  color: #ffffff;
+  background: var(--bg-surface-hover);
+  color: var(--text-primary);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .mat-btn.active {
-  background: #26262e;
-  color: #10b981;
+  background: var(--bg-surface-active);
+  color: var(--accent-emerald-soft);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
 }
 
