@@ -2,6 +2,8 @@
 .customizer-section {
   margin-top: 110px;
   scroll-margin-top: 100px;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 650px;
 }
 
 .customizer-grid {
@@ -241,10 +243,12 @@
   gap: 10px;
 }
 
-.opt-group label {
+.opt-group label,
+.opt-group .opt-label {
   font-size: 14px;
   font-weight: 600;
   color: var(--text-secondary);
+  display: block;
 }
 
 .material-pills-row {

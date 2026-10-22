@@ -24,7 +24,7 @@ export class DynamicIsland {
 
   init() {
     this.container.innerHTML = `
-      <div class="island-pill" id="island-pill">
+      <div class="island-pill" id="island-pill" role="button" tabindex="0" aria-label="Интерактивный индикатор статуса NOVA">
         <div class="island-collapsed-content">
           <span class="island-pulse-dot"></span>
           <span class="island-brand-label">SEPA Instant • Live</span>
@@ -48,6 +48,12 @@ export class DynamicIsland {
 
     this.pill.addEventListener('click', () => {
       this.toggleExpand();
+    });
+    this.pill.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.toggleExpand();
+      }
     });
 
     document.addEventListener('nova:notification', (e) => {

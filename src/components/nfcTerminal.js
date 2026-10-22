@@ -3,8 +3,8 @@ import { HolographicFoil } from '../animations/holographicFoil.js';
 
 const tapAudio = typeof Audio !== 'undefined' ? new Audio('./sounds/nfc-tap.wav') : null;
 const successAudio = typeof Audio !== 'undefined' ? new Audio('./sounds/nfc-success.wav') : null;
-if (tapAudio) tapAudio.preload = 'auto';
-if (successAudio) successAudio.preload = 'auto';
+if (tapAudio) tapAudio.preload = 'none';
+if (successAudio) successAudio.preload = 'none';
 
 export const STORES = [
   {
@@ -131,7 +131,7 @@ export class NFCTerminal {
                 <div class="pos-store-meta">
                   <span class="pos-store-icon" id="pos-store-icon">${store.icon}</span>
                   <div class="pos-store-info">
-                    <h4 id="pos-store-name">${store.name}</h4>
+                    <div class="pos-store-name-title" id="pos-store-name">${store.name}</div>
                     <span id="pos-store-cat">${store.category}</span>
                   </div>
                 </div>
@@ -177,10 +177,10 @@ export class NFCTerminal {
           </div>
 
           <div class="nfc-select-group">
-            <label>Сумма и магазин:</label>
+            <span class="nfc-group-label">Сумма и магазин:</span>
             <div class="pos-pills-row">
               ${STORES.map((s, idx) => `
-                <button class="pos-store-pill ${idx === this.currentStoreIndex ? 'active' : ''}" data-idx="${idx}" type="button">
+                <button class="pos-store-pill ${idx === this.currentStoreIndex ? 'active' : ''}" data-idx="${idx}" type="button" aria-label="Магазин ${s.name}, ${s.category}, сумма ${s.currency}${s.amount}">
                   <span>${s.icon}</span>
                   <span>${s.name.split(' ')[0]} • ${s.currency}${s.amount}</span>
                 </button>
@@ -189,21 +189,21 @@ export class NFCTerminal {
           </div>
 
           <div class="nfc-select-group">
-            <label>Карта для оплаты:</label>
+            <span class="nfc-group-label">Карта для оплаты:</span>
             <div class="pos-pills-row">
-              <button class="pos-card-pill active" data-card="titanium" type="button">
+              <button class="pos-card-pill active" data-card="titanium" type="button" aria-label="Выбрать карту Titanium">
                 <span class="color-dot dot-platinum"></span>
                 <span>Titanium</span>
               </button>
-              <button class="pos-card-pill" data-card="obsidian" type="button">
+              <button class="pos-card-pill" data-card="obsidian" type="button" aria-label="Выбрать карту Midnight Obsidian">
                 <span class="color-dot dot-obsidian"></span>
                 <span>Black</span>
               </button>
-              <button class="pos-card-pill" data-card="emerald" type="button">
+              <button class="pos-card-pill" data-card="emerald" type="button" aria-label="Выбрать карту Racing Emerald">
                 <span class="color-dot dot-emerald"></span>
                 <span>Emerald</span>
               </button>
-              <button class="pos-card-pill" data-card="hologram" type="button">
+              <button class="pos-card-pill" data-card="hologram" type="button" aria-label="Выбрать карту Prism Hologram">
                 <span class="color-dot dot-hologram"></span>
                 <span>Prism Holo</span>
               </button>
@@ -211,7 +211,7 @@ export class NFCTerminal {
           </div>
 
           <div class="nfc-card-dock" id="nfc-card-dock">
-            <div class="nfc-floating-card card-platinum" id="nfc-floating-card" title="Кликните, чтобы оплатить!">
+            <div class="nfc-floating-card card-platinum" id="nfc-floating-card" role="button" tabindex="0" aria-label="Банковская карта для оплаты. Нажмите или коснитесь для транзакции" title="Кликните, чтобы оплатить!">
               <div class="card-inner">
                 <div class="card-face card-front">
                   <div class="card-holo-foil"></div>
@@ -242,7 +242,7 @@ export class NFCTerminal {
               </svg>
               <span>Приложить карту к терминалу</span>
             </button>
-            <button class="secondary-btn" id="repeat-nfc-btn" type="button" style="display: none;">
+            <button class="secondary-btn" id="repeat-nfc-btn" type="button" aria-label="Повторить оплату" style="display: none;">
               <span>Повторить оплату ↺</span>
             </button>
           </div>
@@ -283,6 +283,12 @@ export class NFCTerminal {
     if (this.cardEl) {
       this.cardEl.addEventListener('click', () => {
         if (!this.isProcessing) {
+          this.executePaymentTap();
+        }
+      });
+      this.cardEl.addEventListener('keydown', (e) => {
+        if ((e.key === 'Enter' || e.key === ' ') && !this.isProcessing) {
+          e.preventDefault();
           this.executePaymentTap();
         }
       });
