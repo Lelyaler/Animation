@@ -1,6 +1,6 @@
 # NOVA Pay — Интерактивный концепт финтех-интерфейса
 
-> **Live Demo:** [https://lelyaler.github.io/Animation/](https://lelyaler.github.io/Animation/)
+> **Live Demo:** [https://lelyaler.github.io/Nova-pay/](https://lelyaler.github.io/Nova-pay/)
 
 Комплексный фронтенд-проект с интерактивными микроанимациями, 3D-трансформациями и компонентами современного цифрового банкинга.
 
